@@ -1,0 +1,23 @@
+<html lang="ru">
+
+<header>
+    <meta charset="utf-8">
+    <title>Книжный магазин</title>
+</header>
+
+<body>
+    <nav>
+        <ul>
+            <li><a routerLink="/home">Главная </a></li>
+            <li><a routerLink="/books">Книги </a></li>
+            <li><a routerLink="/comments">Авторы </a></li>
+            <li><a routerLink="/contacts">Коллекции </a></li>
+            <li><a routerLink="/price">Цены </a></li>  
+            <li><a (click)="Logout()" ng-show="[AuthGuard]">Выход</a></li>
+          </ul>
+        </nav>
+        <div class="clear"></div>    
+        <router-outlet></router-outlet>
+    </body>
+
+    </html>

@@ -1,1 +1,11 @@
-<p>bookslist works!</p>
+<p></p>
+<input type="text" class="form-control" [(ngModel)]="BookAuthor" />
+<label>Автор книги: </label>
+<input type="text" class="form-control" [(ngModel)]="BookName" />
+<label> Название книги: </label>
+<input type="text" class="form-control" [(ngModel)]="BookPublisherYear" />
+<label> Год издания: </label>
+<p></p>
+<button class="bttn add" (click)="addBook()">Добавить книгу</button>
+<table class="list-group">
+  <tr class="list-group-item" *ngFor="let books of arrayOfBooks">
