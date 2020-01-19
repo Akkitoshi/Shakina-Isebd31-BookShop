@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { InfoComponent } from './info/info.component';
 import { BookComponent } from './book/book.component';
-import { AuthorComponent, } from './author/author.component';
+import { AuthorComponent } from './author/author.component';
 import { CollectionComponent } from './collection/collection.component';
 import { BooksService } from './book/book.service'; 
 import { HttpClientModule } from '@angular/common/http'; 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,8 +22,6 @@ import { HomeComponent } from './home/home.component';
 import { FilesComponent } from './files/files.component';
 import { FileSelectDirective } from 'ng2-file-upload';
 import { HttpModule } from '@angular/http';
-import { environment } from '../environments/environment';
-import { WebsocketModule } from './author/websocket';
  
 const appRoutes: Routes = [
   { 
@@ -51,10 +49,10 @@ const appRoutes: Routes = [
     data: { title: 'Книги' }
   },
   { 
-    path: 'chat',  
+    path: 'author',  
     component: AuthorComponent,
     canActivate:[AuthGuard], 
-    data: { title: 'Чат/Отзывы' }
+    data: { title: 'Автор' }
   },
   { 
     path: 'collection',  
@@ -93,10 +91,6 @@ const appRoutes: Routes = [
   imports: [
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    WebsocketModule.config({
-        url: environment.ws
-    }),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

@@ -7,7 +7,7 @@
 
 <div class="my_box_files">
   <div class="sidebar">
-    <h1 style="color: rgb(252, 252, 252)">Загрузка файлов</h1>
+    <h1 style="color: rgb(143, 197, 176)">Загрузка файлов</h1>
     <input #fileUpload type="file" (change)="fileChangeEvent($event)" /><br />
     <button type="button" (click)="upload()">Загрузить</button>
     <button type="button" (click)="cancelUpload()">Отмена</button>
@@ -17,6 +17,10 @@
     </div>
   </div>
   <div class="content_files">
+    <div>
+      <h1 style="color: rgb(124, 179, 167)">Скачивание файлов</h1>
+    </div>
+    <button type="button" (click)="getAllFiles()">Все файлы</button>
     <div class="right_content">
       <div class="table-wrapper-scroll-y my-scrollbar-files">
         <form class="emp-form">
@@ -25,6 +29,9 @@
               <tr *ngFor="let file of downloadFiles ;index as i;">
                 <td>{{file}}</td>
                 <td>
+                  <a class="btn" (click)="downloadFile(file)">
+                    <i class="fa fa-download"></i>
+                  </a>
                 </td>
               </tr>
             </tbody>

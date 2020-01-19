@@ -1,34 +1,35 @@
-<p></p>
+<p style = "color: aquamarine;"></p>
+<div id="form" > 
+  <input type="text" id="text" placeholder="" [(ngModel)]="text" (ngModelChange)="getResult(text)">
+</div>
+<label>Автор: </label>
 <input type="text" class="form-control" [(ngModel)]="AuthorName" />
-<label>Автор книги: </label>
+<label> Название: </label>
 <input type="text" class="form-control" [(ngModel)]="BookName" />
-<label> Название книги: </label>
-<input type="text" class="form-control" [(ngModel)]="PublishingYear" />
-<label> Год издания: </label>
-<p></p>
-<button class="bttn add" (click)="addBook()">Добавить книгу</button>
+<label> Стоимость: </label>
+<input type="text" class="form-control" [(ngModel)]="Price" />
+<p style = "color: aquamarine;"></p>
+<button [disabled] type="submit" class="btn btn-lg btn-block btn-info" (click)="SendMessage()">Сообщение</button>
+<button class="bttn add" (click)="addBook()">Добавить</button>
 <table class="list-group">
   <tr class="list-group-item" *ngFor="let books of arrayOfBook">
     <td class="AuthorName">
-      <h4>{{ books.AuthorName }}</h4>
+      <h6>{{ books.AuthorName }}</h6>
     </td>
     <td class="BookName">
-      <h4>{{ books.BookName }}</h4>
+      <h6>{{ books.BookName }}</h6>
     </td>
-    <td class="PublishingYear">
-      <h4>{{ books.PublishingYear }}</h4>
+    <td class="Price">
+      <h6>{{ books.Price }}</h6>
     </td>
     <td class="ChangeBook">
-      <h4><button class="bttn chng" (click)="setNewYear(books)">Изменить книгу</button></h4>
+      <h6><button class="bttn chng" (click)="setNewYear(books)">Изменить</button></h6>
     </td>
     <td class="SaveBook">
-      <h4><button class="bttn chng" (click)="setNewBook(books)">Сохранить изменения</button></h4>
+      <h6><button class="bttn chng" (click)="setNewBook(books)">Сохранить</button></h6>
     </td>
     <td class="DelBook">
-      <h4><button class="bttn del" (click)="delBook(books.BookId)">Удалить книгу</button></h4>
+      <h6><button class="bttn del" (click)="delBook(books.BookId)">Удалить</button></h6>
     </td>
   </tr>
 </table>
-<div id="form">
-  <input type="text" id="text" placeholder="search" [(ngModel)]="text" (ngModelChange)="getResult(text)">
-</div>

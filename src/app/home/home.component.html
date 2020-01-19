@@ -2,15 +2,15 @@
 
 <header>
     <meta charset="utf-8">
-    <title>Книжный магазин</title>
-    <div class="user-count">0</div>
+    <title>Библиотека</title>
 </header>
+
 <body>
     <nav>
         <ul>
             <li><a routerLink="/info">Главная </a></li>
             <li><a routerLink="/book">Наши книги </a></li>
-            <li><a routerLink="/authors">Чат / Отзывы </a></li>
+            <li><a routerLink="/authors">Авторы </a></li>
             <li><a routerLink="/collection">Коллекции </a></li>
             <li><a routerLink="/info">О магазине </a></li>  
             <li><a (click)="Logout()" ng-show="[AuthGuard]">Выход</a></li>

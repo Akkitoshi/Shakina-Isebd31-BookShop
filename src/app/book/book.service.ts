@@ -1,18 +1,32 @@
 import { Injectable } from '@angular/core'; 
 import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 @Injectable()
 
-export class BooksService { 
-    constructor (private http: HttpClient){} 
+export class BooksService implements OnInit { 
+    constructor (private http: HttpClient, private toastr: ToastrService){} 
+    ngOnInit() {
+        this.toastr.success("до запроса")
+        const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+        const data: any = {
+        'url': 'ws://localhost:3000'
+        };
+        this.http.post("http://localhost:3200/subscribe", <JSON>data, httpOptions).subscribe(data => {
+        console.log(data);
+        });
+        console.log("после запроса2");
+        }
+    
     getBooks(){ 
         return this.http.get('https://localhost:44393/api/book'); 
     }
-    addBook( AuthorName:string, BookName:string, PublishingYear: number){
+    addBook( AuthorName:string, BookName:string, Price: number){
         const data ={
             AuthorName: AuthorName,
             BookName : BookName,
-            PublishingYear: PublishingYear
+            Price: Price
         }
         return this.http.post('https://localhost:44393/api/book', (data));
     }
