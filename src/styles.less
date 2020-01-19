@@ -1,8 +1,8 @@
 @import "config.less";
-@color-gray_light: #cbe2fdfb; 
+@color-gray_light: #2b2d30fb; 
 body {
    background: @color-gray_light;
-   background-image: url("/assets/images/im.jpg");
+  //background-image: url("/assets/images/background.jpg");
    background-size: 100%;
 }
 
@@ -12,7 +12,7 @@ a {
 
 nav {
   margin: 0px auto 0;
-  width: 605px;
+  width: 690px;
   height: 45px;
   .border;
   .shadow;
@@ -28,7 +28,7 @@ nav {
           height: 45px;
           text-align: center;
           line-height: 45px;
-          .textcolor(#000000); // You can change this line
+          .textcolor(rgb(255, 255, 255)); // You can change this line
           .divider;
           .gradient;
           &:hover {
@@ -48,22 +48,22 @@ nav {
 div.sm-jumbotron{
     margin: 0px;
     padding: 2rem;
-    background-color: #ff8484;
+    background-color: #84ffa3;
     color: #fff;
 }
  
 button.btn-submit{
-  background-color: #e67b7b;
+  background-color: #7be6c6;
   color: #fff;
   width: 100%;
 }
 button.btn-submit:focus,button.btn-submit:hover{
-  background-color: #e67b7b;
+  background-color: #3d9960;
 }
 
 input.ng-invalid.ng-dirty{
-  border-bottom-color : #e91e63 !important;
-  box-shadow: 0 1px 0 0 #e91e63 !important;
+  border-bottom-color : #18c45a !important;
+  box-shadow: 0 1px 0 0 #11923c !important;
 }
 /*for error div i*/
 div.error-message i{
@@ -81,9 +81,9 @@ div.error-message i{
 }
 .tabs .tab a{
   font-size: 25px;
-  color: rgb(176, 149, 189) !important;
+  color: rgb(5, 75, 40) !important;
 }
 
 .tabs .tab a.active{
-  background-color: rgb(186, 166, 199) !important;
+  background-color: rgb(51, 211, 139) !important;
 }

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title ='books-store';
+  title = 'book-shop';
   constructor(private router: Router) {}
 
   Logout() {

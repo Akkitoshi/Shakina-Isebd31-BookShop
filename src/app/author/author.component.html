@@ -1,0 +1,22 @@
+<div class="container">
+   
+  <div class="row">
+      <form [formGroup]="form" autocomplete="off" novalidate (submit)="sendText()">
+          <div class="form-group">
+              <div class="form-control">
+                  <textarea placeholder="text" autocomplete="off" formControlName="text"></textarea>
+              </div>
+          </div>
+          <div class="form-group">
+              <button type="submit" [disabled]="form.invalid" >Оставьте отзыв</button>
+          </div>
+      </form>
+        <div class="texts">
+            <ul *ngIf="texts$ | async as texts">
+                <li *ngFor="let text of texts; let i = index;">
+                    {{ text }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
